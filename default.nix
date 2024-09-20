@@ -51,6 +51,7 @@
     nh
     numbat
     procs
+    pwgen
     ripgrep
     termscp
     tldr
