@@ -6,7 +6,7 @@
     ./git.nix
     ./helix.nix
     ./starship.nix
-    ./zellij.nix
+    ./zellij
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -39,7 +39,6 @@
     direnv
     docker-compose
     dogdns
-    dua
     du-dust
     duf
     eza
@@ -51,7 +50,6 @@
     nh
     numbat
     procs
-    pwgen
     ripgrep
     termscp
     tldr
