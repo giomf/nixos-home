@@ -3,7 +3,7 @@ layout {
         floating_panes {
             pane {
                 x "1%"
-                y "2%"
+                y "4%"
                 width "98%"
                 height "94%"
             }
@@ -12,7 +12,7 @@ layout {
             plugin location="tab-bar"
         }
         pane split_direction="vertical"
-        pane size=1 borderless=true {
+        pane size=2 borderless=true {
             plugin location="status-bar"
         }
     }
