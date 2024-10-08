@@ -2,5 +2,5 @@
 
 {
   services.gnome-keyring.enable = true;
-  home.packages = with pkgs; [ gnome.libgnome-keyring gnome.gnome-keyring ];
+  home.packages = with pkgs; [ libgnome-keyring gnome-keyring ];
 }
