@@ -1,13 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./fish.nix
-    ./git.nix
-    ./helix.nix
-    ./starship.nix
-    ./zellij
-  ];
+  imports = [ ./ssh.nix ./fish.nix ./git.nix ./helix.nix ./starship.nix ./zellij ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -29,7 +23,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.zoxide.enable = true;
-
 
   # Packages
   home.packages = with pkgs; [
@@ -63,9 +56,4 @@
     gnupg
     nixpkgs-review
   ];
-
-  # Services
-  services.ssh-agent.enable = true;
-  services.gpg-agent.enable = true;
-
 }
