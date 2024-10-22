@@ -30,7 +30,7 @@
           select = "underline";
         };
         statusline = {
-          left = [ "mode" "spacer" "spinner" "spacer" "file-name" "read-only-indicator"];
+          left = [ "mode" "spacer" "spinner" "spacer" "file-name" "read-only-indicator" ];
           center = [ "diagnostics" ];
           right = [ "selections" "position" "position-percentage" "total-line-numbers" ];
         };
@@ -91,6 +91,7 @@
       language = [
         {
           name = "nix";
+          auto-format = true;
           formatter = {
             command = "nixfmt";
             args = [ "-" "-w" "120" "-q" ];
@@ -103,7 +104,10 @@
         }
         {
           name = "python";
-          formatter = { command = "yapf"; args = [ "--style={based_on_style: google, column_limit: 120, indent_width: 4}" ]; };
+          formatter = {
+            command = "yapf";
+            args = [ "--style={based_on_style: google, column_limit: 120, indent_width: 4}" ];
+          };
           auto-format = true;
         }
       ];
