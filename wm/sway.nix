@@ -109,11 +109,21 @@
     {
       enable = true;
       events = [
-        { event = "before-sleep"; command = "${lock_sleep_cmd}"; }
+        {
+          event = "before-sleep";
+          command = "${lock_sleep_cmd}";
+        }
       ];
       timeouts = [
-        { timeout = 300; command = "${lock_idle_cmd}"; }
-        { timeout = 600; command = "${output_off_cmd}"; resumeCommand = "${output_on_cmd}"; }
+        {
+          timeout = 300;
+          command = "${lock_idle_cmd}";
+        }
+        {
+          timeout = 600;
+          command = "${output_off_cmd}";
+          resumeCommand = "${output_on_cmd}";
+        }
       ];
     };
 }

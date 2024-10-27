@@ -74,29 +74,29 @@
       fish_right_prompt = "date '+%H:%M:%S'";
       in_nix = "if set -q IN_NIX_SHELL; printf '[%s%s%s]' ; end";
       fish_prompt = ''
-                if set -q IN_NIX_SHELL
-                  printf '[%s@%s%s%s] [%snix-shell%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (set_color red) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
-                else
-                  printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
-                end
-              '';
+        if set -q IN_NIX_SHELL
+          printf '[%s@%s%s%s] [%snix-shell%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (set_color red) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
+        else
+          printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
+        end
+      '';
 
-              # sudo wrapper that allows fish aliases
-              sudo = ''
-                for i in (seq 1 (count $argv))
-                    if command -q -- $argv[$i]
-                        command sudo $argv
-                        return
-                    else if functions -q -- $argv[$i]
-                        if test $i != 1
-                            set sudo_args $argv[..(math $i - 1)]
-                        end
-                        command sudo $sudo_args -E fish -C "source $(functions --no-details (functions | string split ', ') | psub)" -c '$argv' $argv[$i..]
-                        return
-                    end
-                end
+      # sudo wrapper that allows fish aliases
+      sudo = ''
+        for i in (seq 1 (count $argv))
+            if command -q -- $argv[$i]
                 command sudo $argv
-          '';
+                return
+            else if functions -q -- $argv[$i]
+                if test $i != 1
+                    set sudo_args $argv[..(math $i - 1)]
+                end
+                command sudo $sudo_args -E fish -C "source $(functions --no-details (functions | string split ', ') | psub)" -c '$argv' $argv[$i..]
+                return
+            end
+        end
+        command sudo $argv
+      '';
     };
   };
 }

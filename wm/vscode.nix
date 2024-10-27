@@ -25,7 +25,7 @@
       mhutchie.git-graph
       ms-vscode-remote.remote-ssh
       yzhang.markdown-all-in-one
-	    eamodio.gitlens
+      eamodio.gitlens
       github.github-vscode-theme
       nvarner.typst-lsp
       tomoki1207.pdf

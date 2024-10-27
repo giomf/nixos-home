@@ -5,7 +5,7 @@
     ./kitty.nix
     ./browsers.nix
     ./hyprland.nix
-#    ./keyring.nix
+    #    ./keyring.nix
     # ./vscode.nix
     ./waybar.nix
   ];
@@ -26,7 +26,7 @@
     xournal
 
     # 3D Printing
-#    cura deactivate due to some build errors 
+    #    cura deactivate due to some build errors 
     freecad
 
     # Social

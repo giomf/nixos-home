@@ -1,7 +1,14 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./ssh.nix ./fish.nix ./git.nix ./helix.nix ./starship.nix ./zellij ];
+  imports = [
+    ./ssh.nix
+    ./fish.nix
+    ./git.nix
+    ./helix.nix
+    ./starship.nix
+    ./zellij
+  ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

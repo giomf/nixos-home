@@ -21,9 +21,18 @@
           layer = "top";
           position = "bottom";
           height = 30;
-          modules-left = [ "custom/power" "hyprland/workspaces" ];
+          modules-left = [
+            "custom/power"
+            "hyprland/workspaces"
+          ];
           modules-center = [ "tray" ];
-          modules-right = [ "backlight" "pulseaudio" "temperature" "battery" "clock" ];
+          modules-right = [
+            "backlight"
+            "pulseaudio"
+            "temperature"
+            "battery"
+            "clock"
+          ];
 
           "tray" = {
             icon-size = 20;
@@ -48,7 +57,11 @@
             interval = 20;
             format-discharging = "{icon} {capacity}%";
             format-charging = "󱐋{icon} {capacity}%";
-            format-icons = [ "󱊡" "󱊢" "󱊣" ];
+            format-icons = [
+              "󱊡"
+              "󱊢"
+              "󱊣"
+            ];
             states = {
               "warning" = 50;
               "critical" = 25;
@@ -69,17 +82,21 @@
             critical-threshold = 80;
             format = "{icon} {temperatureC}°C";
             format-critical = " {temperatureC}°C";
-            format-icons = [ "" "" "" ];
+            format-icons = [
+              ""
+              ""
+              ""
+            ];
           };
 
-       #   "network" = {
-       #     format-ethernet = "󰈀";
-       #     tooltip-format-ethernet = "󰈀\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
+          #   "network" = {
+          #     format-ethernet = "󰈀";
+          #     tooltip-format-ethernet = "󰈀\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
 
-       #     format-wifi = "{icon} {signalStrength}%";
-       #     tooltip-format-wifi = "{icon} {essid} ({signalStrength}%)\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
-       #     format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
-       #   };
+          #     format-wifi = "{icon} {signalStrength}%";
+          #     tooltip-format-wifi = "{icon} {essid} ({signalStrength}%)\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
+          #     format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+          #   };
         };
       };
       style = ''
