@@ -48,6 +48,7 @@
     hexyl
     kmon
     nh
+    nmap
     numbat
     procs
     ripgrep
