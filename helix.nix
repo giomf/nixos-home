@@ -55,6 +55,7 @@
         lsp = {
           display-messages = true;
         };
+        jump-label-alphabet = "asdfghjklöä";
       };
 
       keys = {
