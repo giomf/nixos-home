@@ -23,10 +23,10 @@
     libreoffice-qt
     thunderbird
     vlc
-    xournal
+    xournalpp
 
     # 3D Printing
-    #    cura deactivate due to some build errors 
+    #    cura deactivate due to some build errors
     freecad
 
     # Social
