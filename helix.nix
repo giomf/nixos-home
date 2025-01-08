@@ -34,6 +34,11 @@
           character = "┊"; # Some characters that work well: "▏", "┆", "┊", "⸽"
           skip-levels = 1;
         };
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics = {
+          cursor-line = "warning";
+          other-lines = "disable";
+        };
         statusline = {
           left = [
             "mode"
