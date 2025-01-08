@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    diffnav
     tig
     delta
   ];
@@ -10,6 +11,7 @@
     enable = true;
     extraConfig = {
       push.autoSetupRemote = true;
+      pager.diff = "diffnav";
       diff = {
         colorMoved = "default";
       };
