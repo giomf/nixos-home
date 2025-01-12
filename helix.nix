@@ -90,7 +90,6 @@
             "paste_after"
           ];
           D = "delete_char_backward";
-          down = "no_op";
           e = "move_next_word_end";
           end = "no_op";
           H = "goto_line_start";
@@ -105,12 +104,9 @@
             "move_visual_line_up"
             "move_visual_line_up"
           ];
-          left = "no_op";
           L = "goto_line_end";
           pagedown = "no_op";
           pageup = "no_op";
-          right = "no_op";
-          up = "no_op";
           W = "move_prev_long_word_start";
           w = "move_prev_word_start";
           X = "extend_line_above";
