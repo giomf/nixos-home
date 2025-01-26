@@ -48,6 +48,7 @@
     hexyl
     kmon
     nh
+    nix-output-monitor
     nmap
     numbat
     procs
