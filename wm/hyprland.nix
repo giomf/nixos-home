@@ -1,12 +1,13 @@
 { pkgs, ... }:
 
 {
+
   home.packages = with pkgs; [
     bemenu
     gammastep
     swaybg
     sway-contrib.grimshot
-    swaylock-effects
+    framework-tool
   ];
 
   wayland.windowManager.hyprland =
@@ -40,7 +41,7 @@
                 			bind = $mod, I, exec, grimshot copy area
                 			bind = $mod, C, exec, $term -e numbat
                 			bind = $mod, U, exec, bash -c if pgrep gammastep; then pkill gammastep; else gammastep -O 4500; fi
-                			bind = $mod, escape, exec, ${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 1
+                			bind = $mod, escape, exec, ${pkgs.hyprlock}/bin/hyprlock
 
                 			binde = , XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
                 			binde = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -124,34 +125,88 @@
                 		'';
     };
 
-  services.swayidle =
-    let
-      output_on_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-      output_off_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-      suspend_cmd = "${pkgs.systemd}/bin/systemctl suspend";
-      lock_sleep_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10";
-      lock_idle_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 3 --grace 10";
-    in
-    {
-      enable = true;
-      systemdTarget = "hyprland-session.target";
-      events = [
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      background = [
         {
-          event = "before-sleep";
-          command = "${lock_sleep_cmd}";
+          path = "screenshot";
+          blur_passes = 3;
+          blur_size = 8;
         }
       ];
-      timeouts = [
+      label = [
         {
-          timeout = 300;
-          command = "${lock_idle_cmd}";
+          position = "45%, 50%";
+          font_size = 60;
+          text = "$TIME";
         }
+      ];
+      input-field = [
         {
-          timeout = 600;
-          command = "${output_off_cmd}";
-          resumeCommand = "${output_on_cmd}";
+          size = "200, 50";
+          position = "0, -80";
+          dots_center = true;
+          fade_on_empty = false;
+          font_color = "rgb(202, 211, 245)";
+          inner_color = "rgb(91, 96, 120)";
+          outer_color = "rgb(24, 25, 38)";
+          outline_thickness = 5;
+          placeholder_text = "Password";
+          shadow_passes = 2;
         }
-        #        { timeout = 900; command = "${suspend_cmd}"; resumeCommand = "${output_on_cmd}"; }
       ];
     };
+  };
+
+  services.hypridle = {
+    enable = true;
+    settings =
+
+      let
+        display_device = " sysfs/backlight/amdgpu_bl1";
+        keyboard_device = "sysfs/leds/framework_laptop::kbd_backlight";
+      in
+      {
+        general = {
+          lock_cmd = "${pkgs.hyprlock}/bin/hyprlock";
+          before_sleep_cmd = "${pkgs.hyprlock}/bin/hyprlock";
+          after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+        };
+
+        listener = [
+          # Dimm screen back light
+          {
+            timeout = 150;
+            on-timeout = "${pkgs.light}/bin/light -s ${display_device} -O && ${pkgs.light}/bin/light -s ${display_device} -S 10";
+            on-resume = "${pkgs.light}/bin/light -s ${display_device} -I";
+          }
+
+          # Turn off keyboard backlight
+          {
+            timeout = 150;
+            on-timeout = "${pkgs.light}/bin/light -s ${keyboard_device} -O && ${pkgs.light}/bin/light -s ${keyboard_device} -S 0";
+            on-resume = "${pkgs.light}/bin/light -s ${keyboard_device} -I";
+          }
+
+          # Turn off screen backlight
+          {
+            timeout = 300;
+            on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+            on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+          }
+          # Lock session
+          {
+            timeout = 330;
+            on-timeout = "${pkgs.hyprlock}/bin/hyprlock";
+          }
+          # Suspend
+          {
+            timeout = 600;
+            on-timeout = "${pkgs.systemd}/bin/systemctl suspend";
+          }
+        ];
+
+      };
+  };
 }
