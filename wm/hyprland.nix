@@ -2,13 +2,29 @@
 
 {
 
+  imports = [
+    ./waybar.nix
+  ];
+
   home.packages = with pkgs; [
     bemenu
     gammastep
     swaybg
     sway-contrib.grimshot
     framework-tool
+    networkmanagerapplet
+    pavucontrol
+    pulseaudio
   ];
+
+  services.blueman-applet.enable = true;
+
+  ## Notification daemon
+  services.mako = {
+    enable = true;
+    defaultTimeout = 7500;
+    maxVisible = 3;
+  };
 
   wayland.windowManager.hyprland =
     let
