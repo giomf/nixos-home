@@ -4,6 +4,7 @@
   imports = [
     ./kitty.nix
     ./browsers.nix
+    ./autostart
     # ./hyprland.nix
     #    ./keyring.nix
     # ./vscode.nix
