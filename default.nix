@@ -58,6 +58,7 @@
     unzip
     wget
     yazi
+    openssl
 
     # Coding
     gh
