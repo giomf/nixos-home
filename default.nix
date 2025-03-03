@@ -65,5 +65,6 @@
     git-crypt
     gnupg
     nixpkgs-review
+    aider-chat
   ];
 }
