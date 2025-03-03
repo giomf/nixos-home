@@ -91,9 +91,7 @@
           ];
           D = "delete_char_backward";
           e = "move_next_word_end";
-          end = "no_op";
           H = "goto_line_start";
-          home = "no_op";
           J = [
             "move_visual_line_down"
             "move_visual_line_down"
@@ -105,8 +103,6 @@
             "move_visual_line_up"
           ];
           L = "goto_line_end";
-          pagedown = "no_op";
-          pageup = "no_op";
           W = "move_prev_long_word_start";
           w = "move_prev_word_start";
           X = "extend_line_above";
