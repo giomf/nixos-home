@@ -60,7 +60,7 @@
         lsp = {
           display-messages = true;
         };
-        jump-label-alphabet = "asdfghjklöä";
+        jump-label-alphabet = "asdfghjklqwertzuio";
       };
 
       keys = {
