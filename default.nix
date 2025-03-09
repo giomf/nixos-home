@@ -39,7 +39,7 @@
     direnv
     docker-compose
     dogdns
-    du-dust
+    dua
     duf
     eza
     fd
