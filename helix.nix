@@ -24,6 +24,7 @@
         mouse = false;
         color-modes = true;
         bufferline = "always";
+        cursorline = true;
         cursor-shape = {
           normal = "block";
           insert = "bar";
@@ -110,6 +111,7 @@
           space.w = ":w";
           C-h = "goto_previous_buffer";
           C-l = "goto_next_buffer";
+          ret = "goto_word";
         };
 
         insert = {
