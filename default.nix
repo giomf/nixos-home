@@ -28,15 +28,20 @@
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  programs.zoxide.enable = true;
+  programs = {
+    home-manager.enable = true;
+    zoxide.enable = true;
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+  };
 
   # Packages
   home.packages = with pkgs; [
     # Base
     bat
     btop
-    direnv
     docker-compose
     dogdns
     dua
