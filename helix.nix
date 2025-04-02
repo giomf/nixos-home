@@ -66,13 +66,13 @@
 
       keys = {
         normal = {
-          A-j = [
+          C-S-j = [
             "extend_to_line_bounds"
             "delete_selection"
             "move_line_down"
             "paste_before"
           ];
-          A-k = [
+          C-S-k = [
             "extend_to_line_bounds"
             "delete_selection"
             "move_line_up"
