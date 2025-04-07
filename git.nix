@@ -10,6 +10,7 @@
   programs.git = {
     enable = true;
     extraConfig = {
+      core.excludesfile = "~/.global_gitignore";
       push.autoSetupRemote = true;
       pager.diff = "diffnav";
       diff = {
