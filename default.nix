@@ -66,10 +66,10 @@
     openssl
 
     # Coding
+    aider-chat
     gh
     git-crypt
     gnupg
     nixpkgs-review
-    aider-chat
   ];
 }

@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   programs.fish = {
@@ -46,12 +46,14 @@
       "lt" = "eza -lbghF --tree --level=2";
 
       # git
+      "lg" = "lazygit";
       "gaa" = "git add -A";
       "gca" = "git commit -a";
       "gch" = "git checkout";
       "gdf" = "git diff";
       "gfp" = "git fetch -ap";
-      "glg" = "git log --decorate --graph --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''            %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%n' --date=local --all";
+      "glg" =
+        "git log --decorate --graph --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''            %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%n' --date=local --all";
       "gph" = "git push";
       "gpr" = "git pull --rebase";
       "gre" = "git rebase";
@@ -60,7 +62,8 @@
       "gsh" = "git show";
       "gst" = "git status";
       "gsu" = "git submodule update --init --recursive";
-      "gbp" = "git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 (git branch -vv | grep origin | psub) | awk '{print $1}' | xargs git branch -D";
+      "gbp" =
+        "git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 (git branch -vv | grep origin | psub) | awk '{print $1}' | xargs git branch -D";
 
       # systemctl
       "sc" = "systemctl";

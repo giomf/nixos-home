@@ -66,6 +66,14 @@
 
       keys = {
         normal = {
+          space.g = [
+            ":write-all"
+            ":new"
+            ":insert-output lazygit"
+            ":buffer-close!"
+            ":redraw"
+            ":reload-all"
+          ];
           C-S-j = [
             "extend_to_line_bounds"
             "delete_selection"
