@@ -119,6 +119,7 @@
     # 3D Printing
     #    cura deactivate due to some build errors
     freecad
+    kicad
 
     # Social
     discord
