@@ -15,24 +15,24 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        # Web browsing - LibreWolf
-        "text/html" = [ "librewolf.desktop" ];
-        "x-scheme-handler/http" = [ "librewolf.desktop" ];
-        "x-scheme-handler/https" = [ "librewolf.desktop" ];
-        "x-scheme-handler/about" = [ "librewolf.desktop" ];
-        "x-scheme-handler/unknown" = [ "librewolf.desktop" ];
-        "application/x-extension-htm" = [ "librewolf.desktop" ];
-        "application/x-extension-html" = [ "librewolf.desktop" ];
-        "application/x-extension-shtml" = [ "librewolf.desktop" ];
-        "application/xhtml+xml" = [ "librewolf.desktop" ];
-        "application/x-extension-xhtml" = [ "librewolf.desktop" ];
-        "application/x-extension-xht" = [ "librewolf.desktop" ];
+        # Web browsing - firefox
+        "text/html" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "x-scheme-handler/about" = [ "firefox.desktop" ];
+        "x-scheme-handler/unknown" = [ "firefox.desktop" ];
+        "application/x-extension-htm" = [ "firefox.desktop" ];
+        "application/x-extension-html" = [ "firefox.desktop" ];
+        "application/x-extension-shtml" = [ "firefox.desktop" ];
+        "application/xhtml+xml" = [ "firefox.desktop" ];
+        "application/x-extension-xhtml" = [ "firefox.desktop" ];
+        "application/x-extension-xht" = [ "firefox.desktop" ];
 
-        # PDF - LibreWolf
-        "application/pdf" = [ "librewolf.desktop" ];
-        "application/x-pdf" = [ "librewolf.desktop" ];
-        "application/x-bzpdf" = [ "librewolf.desktop" ];
-        "application/x-gzpdf" = [ "librewolf.desktop" ];
+        # PDF - firefox
+        "application/pdf" = [ "firefox.desktop" ];
+        "application/x-pdf" = [ "firefox.desktop" ];
+        "application/x-bzpdf" = [ "firefox.desktop" ];
+        "application/x-gzpdf" = [ "firefox.desktop" ];
 
         # Images - feh
         "image/png" = [ "feh.desktop" ];
