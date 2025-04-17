@@ -120,6 +120,7 @@
     #    cura deactivate due to some build errors
     freecad
     kicad
+    temurin-jre-bin # Needed for kicads plugin freerouting
 
     # Social
     discord
