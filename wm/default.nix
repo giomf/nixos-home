@@ -2,9 +2,10 @@
 
 {
   imports = [
-    ./kitty.nix
-    ./browsers.nix
     ./autostart
+    ./browsers.nix
+    ./kicad.nix
+    ./kitty.nix
     # ./hyprland.nix
     #    ./keyring.nix
     # ./vscode.nix
@@ -120,6 +121,7 @@
     #    cura deactivate due to some build errors
     freecad
     kicad
+    temurin-jre-bin # Needed for kicads plugin freerouting
 
     # Social
     discord
