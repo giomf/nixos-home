@@ -5,7 +5,7 @@
     ./autostart
     ./browsers.nix
     ./kicad.nix
-    ./kitty.nix
+    # ./kitty.nix
     # ./hyprland.nix
     #    ./keyring.nix
     # ./vscode.nix
@@ -107,6 +107,8 @@
   # Packages
   home.packages = with pkgs; [
     # Base
+    alacritty
+    kitty
 
     # Office
     feh
