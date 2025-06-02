@@ -1,14 +1,14 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   imports = [
     ./autostart
     ./browsers.nix
     ./kicad.nix
-    # ./kitty.nix
-    # ./hyprland.nix
-    #    ./keyring.nix
-    # ./vscode.nix
+    ./cosmic.nix
   ];
 
   xdg = {
