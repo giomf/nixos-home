@@ -1,5 +1,27 @@
-{ cosmic-manager, cosmicLib, ... }:
-
+{
+  pkgs,
+  cosmic-manager,
+  cosmicLib,
+  ...
+}:
+let
+  screenshot_script = pkgs.writeShellApplication {
+    runtimeInputs = with pkgs; [
+      satty
+      wl-clipboard
+    ];
+    name = "screenshot.sh";
+    text = ''
+      filename=$(cosmic-screenshot --interactive=false -s /tmp)
+      satty -f "$filename" \
+            --fullscreen \
+            --initial-tool crop \
+            --actions-on-right-click save-to-clipboard \
+            --copy-command wl-copy \
+            --early-exit
+    '';
+  };
+in
 {
   imports = [
     cosmic-manager.homeManagerModules.cosmic-manager
@@ -129,6 +151,16 @@
       {
         action = mkRON "enum" "Maximize";
         key = "Super+E";
+      }
+      {
+        action = mkRON "enum" {
+          value = [
+            "${screenshot_script}/bin/screenshot.sh"
+          ];
+          variant = "Spawn";
+        };
+        description = mkRON "optional" "Screenshot";
+        key = "Super+P";
       }
     ];
 
