@@ -118,6 +118,7 @@
     thunderbird
     vlc
     xournalpp
+    flameshot
 
     # 3D Printing
     #    cura deactivate due to some build errors

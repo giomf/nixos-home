@@ -129,6 +129,16 @@
         action = mkRON "enum" "Maximize";
         key = "Super+E";
       }
+      {
+        action = mkRON "enum" {
+          value = [
+            "flameshot gui"
+          ];
+          variant = "Spawn";
+        };
+        description = mkRON "optional" "Screenshot";
+        key = "Print";
+      }
     ];
 
     systemActions = mkRON "map" [
