@@ -114,7 +114,7 @@
     feh
     gimp
     keepassxc
-    libreoffice-qt
+    onlyoffice-bin
     thunderbird
     vlc
     xournalpp
