@@ -155,13 +155,6 @@
           };
         }
         {
-          name = "rust";
-          formatter = {
-            command = "rustfmt";
-          };
-          auto-format = true;
-        }
-        {
           name = "python";
           formatter = {
             command = "bash";
