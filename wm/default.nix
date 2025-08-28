@@ -114,6 +114,7 @@
     feh
     gimp
     keepassxc
+    obsidian
     onlyoffice-bin
     thunderbird
     vlc
