@@ -33,8 +33,8 @@
         include = {
           path = (
             builtins.fetchurl {
-              url = "https://raw.githubusercontent.com/dandavison/delta/master/themes.gitconfig";
-              sha256 = "sha256:17z9q785y0g5isdavc86siz75w33r1i2yri9m1ih75p6553ymf2g";
+              url = "https://raw.githubusercontent.com/dandavison/delta/refs/tags/0.18.2/themes.gitconfig";
+              sha256 = "sha256:15f7cyf7k03dqwyfviwzxvyskrc4gdi4vn7ga21qz6fgnb7w6vzc";
             }
           );
         };
