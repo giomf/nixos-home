@@ -56,14 +56,15 @@
     nix-output-monitor
     nmap
     numbat
+    openssl
     procs
     ripgrep
+    sd
     termscp
     tldr
     unzip
     wget
     yazi
-    openssl
 
     # Coding
     aider-chat
