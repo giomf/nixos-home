@@ -58,6 +58,7 @@
     numbat
     openssl
     procs
+    pwgen
     ripgrep
     sd
     termscp
