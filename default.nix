@@ -53,6 +53,7 @@
     hexyl
     kmon
     nh
+    nixos-rebuild-ng
     nix-output-monitor
     nmap
     numbat
