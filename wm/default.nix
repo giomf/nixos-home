@@ -115,7 +115,7 @@
     gimp
     keepassxc
     obsidian
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     thunderbird
     vlc
     xournalpp

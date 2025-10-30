@@ -7,7 +7,6 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-wayland;
     profiles = {
       guif = {
         id = 0;
