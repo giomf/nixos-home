@@ -11,10 +11,12 @@
     lazygit = {
       enable = true;
       settings = {
-        git.paging = {
-          colorArgs = "always";
-          pager = "delta --dark --paging=never --features mantis-shrimp-lite";
-        };
+        git.pagers = [
+          {
+            colorArgs = "always";
+            pager = "delta --dark --paging=never --features mantis-shrimp-lite";
+          }
+        ];
       };
     };
 
