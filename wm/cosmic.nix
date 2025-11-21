@@ -185,6 +185,7 @@ in
         expand_to_edges = true;
         opacity = 1.0;
         output = mkRON "enum" "All";
+        margin = 4;
         plugins_center = mkRON "optional" [
           "com.system76.CosmicAppletStatusArea"
         ];
