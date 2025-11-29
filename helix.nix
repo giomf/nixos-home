@@ -165,6 +165,13 @@
           };
           auto-format = true;
         }
+        {
+          name = "cpp";
+          formatter = {
+            command = "clang-format";
+          };
+          auto-format = true;
+        }
       ];
     };
   };
