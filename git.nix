@@ -1,28 +1,21 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  home.packages = with pkgs; [
-    diffnav
-    tig
-    delta
-  ];
 
   programs = {
-    lazygit = {
+    delta = {
       enable = true;
-      settings = {
-        git.pagers = [
-          {
-            colorArgs = "always";
-            pager = "delta --dark --paging=never --features mantis-shrimp-lite";
-          }
-        ];
+      enableGitIntegration = true;
+      options = {
+        features = "mantis-shrimp-lite";
+        side-by-side = true;
+        line-numbers = true;
       };
     };
 
     git = {
       enable = true;
-      extraConfig = {
+      settings = {
         core.excludesfile = "~/.global_gitignore";
         push.autoSetupRemote = true;
         pager.diff = "diffnav";
@@ -41,13 +34,17 @@
           );
         };
       };
-      delta = {
-        enable = true;
-        options = {
-          features = "mantis-shrimp-lite";
-          side-by-side = true;
-          line-numbers = true;
-        };
+    };
+
+    lazygit = {
+      enable = true;
+      settings = {
+        git.pagers = [
+          {
+            colorArgs = "always";
+            pager = "delta --dark --paging=never --features mantis-shrimp-lite";
+          }
+        ];
       };
     };
   };
